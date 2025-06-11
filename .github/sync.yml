@@ -3,5 +3,5 @@ YunchengLiu/my-vcpkg-binarycaches@main:
     dest: vcpkg.json
   - source: hxtplib/vcpkg-configuration.json
     dest: vcpkg-configuration.json
-  - source: hxtplib/config/vcpkg/**
+  - source: hxtplib/config/vcpkg/
     dest: overlay-triplets/
