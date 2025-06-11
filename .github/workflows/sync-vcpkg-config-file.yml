@@ -13,11 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout current repo
+        # checkout the current repository to github workspace
+        # not the current_repo
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          path: current-repo
-          fetch-depth: 0
 
       - name: Checkout private repo
         uses: actions/checkout@v4
