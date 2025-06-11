@@ -30,3 +30,6 @@ jobs:
         uses: Redocly/repo-file-sync-action@main
         with:
           GH_PAT: ${{ secrets.VCPKG_CONFIG_FILES_SYNC_WRITE_TOKEN }}
+          SKIP_PR: true
+          OVERWRITE_EXISTING_PR: true
+          COMMIT_EACH_FILE: false
