@@ -21,6 +21,13 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
+      - name: Checkout current repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          path: current-repo
+          fetch-depth: 0
+
       - name: Sync files via repo-file-sync-action
         uses: Redocly/repo-file-sync-action@main
         with:
