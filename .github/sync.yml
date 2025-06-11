@@ -1,4 +1,4 @@
-YunchengLiu/hxtplib@main:
+YunchengLiu/my-vcpkg-binarycaches@main:
   - source: hxtplib/vcpkg.json
     dest: vcpkg.json
   - source: hxtplib/vcpkg-configuration.json
