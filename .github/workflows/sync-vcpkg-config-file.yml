@@ -48,5 +48,5 @@ jobs:
       - name: Commit resolved vcpkg-configuration.json file
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: 'resolve overlay-triplets path in vcpkg-configuration.json'
+          commit_message: '[action] 🔧 resolve overlay-triplets path in vcpkg-configuration.json'
           file_pattern: 'vcpkg-configuration.json'
