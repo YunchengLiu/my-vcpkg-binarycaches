@@ -6,6 +6,6 @@
     "repository": "https://github.com/microsoft/vcpkg"
   },
   "overlay-triplets": [
-    "./config/vcpkg/"
+    "overlay-triplets/"
   ]
 }
