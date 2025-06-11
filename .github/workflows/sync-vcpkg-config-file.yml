@@ -2,7 +2,7 @@ name: Sync vcpkg Config Files from hxtplib
 
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 16 * * *' 
   workflow_dispatch:
 
 permissions:
@@ -33,3 +33,7 @@ jobs:
           SKIP_PR: true
           OVERWRITE_EXISTING_PR: true
           COMMIT_EACH_FILE: false
+          COMMIT_PREFIX: '[action] 🔄'
+          COMMIT_BODY: 'Update vcpkg configs from hxtplib repo'
+          GIT_USERNAME: 'github-actions[bot]'
+          GIT_EMAIL: '41898282+github-actions[bot]@users.noreply.github.com'

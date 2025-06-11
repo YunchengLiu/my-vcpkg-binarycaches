@@ -2,7 +2,7 @@ name: Sync vcpkg Submodule from hxtplib
 
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 16 * * *'
   workflow_dispatch:
 
 permissions:
