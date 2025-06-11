@@ -1,0 +1,69 @@
+name: Sync vcpkg Submodule from hxtplib
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  submodule-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout private repo
+        uses: actions/checkout@v4
+        with:
+          repository: YunchengLiu/hxtplib
+          token: ${{ secrets.SYNC_FROM_HXTP_TOKEN }}
+          path: hxtplib
+          fetch-depth: 0
+          submodules: recursive
+          persist-credentials: false
+
+      - name: Checkout current repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          path: current-repo
+          fetch-depth: 0
+          submodules: recursive
+
+      - name: Get target vcpkg SHA
+        run: echo "HXTP_VCPKG_SUBMODULE_SHA=$(git -C hxtplib/vcpkg rev-parse HEAD)" >> $GITHUB_ENV
+
+      - name: Check if sync needed
+        id: check-update
+        run: |
+          CURRENT_VCPKG_SHA=$(git -C current-repo/vcpkg rev-parse HEAD)
+          echo "Current vcpkg SHA: $CURRENT_VCPKG_SHA"
+          echo "Target vcpkg SHA: $HXTP_VCPKG_SUBMODULE_SHA"
+          if [ "$CURRENT_VCPKG_SHA" = "$HXTP_VCPKG_SUBMODULE_SHA" ]; then
+            echo "No update needed"
+            echo "need-update=false" >> $GITHUB_OUTPUT
+          else
+            echo "Update needed"
+            echo "need-update=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Update vcpkg submodule
+        if: steps.check-update.outputs.need-update == 'true'
+        run: |
+          cd current-repo
+          git -C vcpkg fetch --all
+          git -C vcpkg checkout $HXTP_VCPKG_SUBMODULE_SHA
+          git add vcpkg
+
+      - name: Commit and push changes
+        if: steps.check-update.outputs.need-update == 'true'
+        run: |
+          cd current-repo
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "[action] Sync vcpkg submodule to $HXTP_VCPKG_SUBMODULE_SHA"
+            git push
+          fi
