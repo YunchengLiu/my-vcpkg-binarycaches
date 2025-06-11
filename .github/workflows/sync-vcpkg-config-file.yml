@@ -29,4 +29,4 @@ jobs:
       - name: Sync files via repo-file-sync-action
         uses: Redocly/repo-file-sync-action@main
         with:
-          GH_PAT: ${{ secrets.SYNC_FROM_HXTP_TOKEN }}
+          GH_PAT: ${{ secrets.VCPKG_CONFIG_FILES_SYNC_WRITE_TOKEN }}
