@@ -1,0 +1,7 @@
+YunchengLiu/hxtplib@main:
+  - source: hxtplib/vcpkg.json
+    dest: vcpkg.json
+  - source: hxtplib/vcpkg-configuration.json
+    dest: vcpkg-configuration.json
+  - source: hxtplib/config/vcpkg/**
+    dest: overlay-triplets/**

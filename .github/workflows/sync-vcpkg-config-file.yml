@@ -1,0 +1,27 @@
+name: Sync vcpkg Config Files from hxtplib
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  file-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout private repo
+        uses: actions/checkout@v4
+        with:
+          repository: YunchengLiu/hxtplib
+          token: ${{ secrets.SYNC_FROM_HXTP_TOKEN }}
+          path: hxtplib
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Sync files via repo-file-sync-action
+        uses: Redocly/repo-file-sync-action@main
+        with:
+          GH_PAT: ${{ secrets.SYNC_FROM_HXTP_TOKEN }}
