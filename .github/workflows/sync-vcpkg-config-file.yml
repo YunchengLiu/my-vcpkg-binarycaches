@@ -37,16 +37,3 @@ jobs:
           COMMIT_BODY: 'Update vcpkg configs from hxtplib repo'
           GIT_USERNAME: 'github-actions[bot]'
           GIT_EMAIL: '41898282+github-actions[bot]@users.noreply.github.com'
-
-      - name: Resolve vcpkg-configuration.json file
-        run: |
-          cp hxtplib/vcpkg-configuration.json .
-          jq '.["overlay-triplets"] = ["overlay-triplets/"]' \
-            vcpkg-configuration.json > tmp.json
-          mv tmp.json vcpkg-configuration.json
-
-      - name: Commit resolved vcpkg-configuration.json file
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: '[action] 🔧 resolve overlay-triplets path in vcpkg-configuration.json'
-          file_pattern: 'vcpkg-configuration.json'

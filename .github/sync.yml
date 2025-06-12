@@ -4,6 +4,6 @@ YunchengLiu/my-vcpkg-binarycaches@main:
   - source: hxtplib/vcpkg-configuration.json
     dest: vcpkg-configuration.json
   - source: hxtplib/config/vcpkg/hxtp-x64-win-static.cmake
-    dest: overlay-triplets/hxtp-x64-win-static.cmake
+    dest: config/vcpkg/hxtp-x64-win-static.cmake
   - source: hxtplib/config/vcpkg/hxtp-x64-win.cmake
-    dest: overlay-triplets/hxtp-x64-win.cmake
+    dest: config/vcpkg/hxtp-x64-win.cmake
