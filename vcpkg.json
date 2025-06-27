@@ -2,12 +2,20 @@
   "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
   "dependencies": [
     {
-      "name": "assimp",
-      "version>=": "6.0.2",
-      "default-features": false,
-      "$description": "The Open Asset import library",
-      "$license": "BSD-3-Clause",
-      "$homepage": "https://github.com/assimp/assimp"
+        "name": "assimp",
+        "version>=": "6.0.2",
+        "default-features": false,
+        "$description": "The Open Asset import library",
+        "$license": "BSD-3-Clause",
+        "$homepage": "https://github.com/assimp/assimp"
+    },
+    {
+        "name": "boost-asio",
+        "version>=": "1.88.0",
+        "default-features": false,
+        "$description": "Boost asio module",
+        "$license": "BSL-1.0",
+        "$homepage": "https://github.com/boostorg/asio"
     },
     {
       "name": "boost-container",
