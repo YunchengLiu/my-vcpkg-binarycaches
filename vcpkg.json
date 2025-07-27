@@ -2,20 +2,20 @@
   "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
   "dependencies": [
     {
-        "name": "assimp",
-        "version>=": "6.0.2",
-        "default-features": false,
-        "$description": "The Open Asset import library",
-        "$license": "BSD-3-Clause",
-        "$homepage": "https://github.com/assimp/assimp"
+      "name": "assimp",
+      "version>=": "6.0.2",
+      "default-features": false,
+      "$description": "The Open Asset import library",
+      "$license": "BSD-3-Clause",
+      "$homepage": "https://github.com/assimp/assimp"
     },
     {
-        "name": "boost-asio",
-        "version>=": "1.88.0",
-        "default-features": false,
-        "$description": "Boost asio module",
-        "$license": "BSL-1.0",
-        "$homepage": "https://github.com/boostorg/asio"
+      "name": "boost-asio",
+      "version>=": "1.88.0",
+      "default-features": false,
+      "$description": "Boost asio module",
+      "$license": "BSL-1.0",
+      "$homepage": "https://github.com/boostorg/asio"
     },
     {
       "name": "boost-container",
@@ -40,6 +40,14 @@
       "$description": "Boost crc module",
       "$license": "BSL-1.0",
       "$homepage": "https://github.com/boostorg/crc"
+    },
+    {
+      "name": "boost-dynamic-bitset",
+      "version>=": "1.88.0",
+      "default-features": false,
+      "$description": "Boost dynamic_bitset module",
+      "$license": "BSL-1.0",
+      "$homepage": "https://www.boost.org/libs/dynamic_bitset"
     },
     {
       "name": "boost-endian",
@@ -131,6 +139,15 @@
       "$homepage": "https://github.com/boostorg/unordered"
     },
     {
+      "name": "clipper2",
+      "version>=": "1.5.4",
+      "platform": "windows",
+      "default-features": false,
+      "$description": "Polygon Clipping and Offsetting",
+      "$license": "BSL-1.0",
+      "$homepage": "http://www.angusj.com/clipper2"
+    },
+    {
       "name": "eigen3",
       "version>=": "3.4.0#5",
       "default-features": false,
@@ -217,6 +234,14 @@
       "$description": "Very fast, header-only/compiled, C++ logging library.",
       "$license": "MIT",
       "$homepage": "https://github.com/gabime/spdlog"
+    },
+    {
+      "name": "stb",
+      "version>=": "2024-07-29#1",
+      "default-features": false,
+      "$description": "public domain header-only libraries",
+      "$license": "MIT OR CC-PDDC",
+      "$homepage": "https://github.com/nothings/stb"
     },
     {
       "name": "tl-expected",
