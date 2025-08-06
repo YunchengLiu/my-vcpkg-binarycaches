@@ -1,5 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
+  "name": "hxtplib",
+  "version": "0.0.1",
+  "description": "HUST Xiong-group Two Photon Library written in modern c++",
   "dependencies": [
     {
       "name": "assimp",
@@ -157,7 +160,7 @@
     },
     {
       "name": "fmt",
-      "version>=": "11.0.2#1",
+      "version>=": "11.2.0",
       "default-features": false,
       "$description": "Formatting library for C++. It can be used as a safe alternative to printf or as a fast alternative to IOStreams.",
       "$license": "MIT",
@@ -173,14 +176,6 @@
       "$description": "GoogleTest and GoogleMock testing frameworks.",
       "$license": "BSD-3-Clause",
       "$homepage": "https://github.com/google/googletest"
-    },
-    {
-      "name": "icu",
-      "version>=": "74.2#5",
-      "default-features": false,
-      "$description": "Mature and widely used Unicode and localization library.",
-      "$license": "ICU",
-      "$homepage": "https://icu.unicode.org/home"
     },
     {
       "name": "libigl",
@@ -220,12 +215,12 @@
       "$homepage": "https://github.com/sago007/PlatformFolders"
     },
     {
-      "name": "scope-guard",
-      "version>=": "1.1.0",
+      "name": "simdutf",
+      "version>=": "7.3.4",
       "default-features": false,
-      "$description": "A public, general, simple, and fast C++11 scope guard that defends against implicitly ignored returns and optionally enforces noexcept at compile time (in C++17), all in a SFINAE-friendly maner.",
-      "$license": "Unlicense",
-      "$homepage": "https://github.com/ricab/scope_guard"
+      "$description": "Unicode validation and transcoding at billions of characters per second",
+      "$license": "Apache-2.0 OR MIT",
+      "$homepage": "https://github.com/simdutf/simdutf"
     },
     {
       "name": "spdlog",
@@ -244,14 +239,6 @@
       "$homepage": "https://github.com/nothings/stb"
     },
     {
-      "name": "tl-expected",
-      "version>=": "1.1.0",
-      "default-features": false,
-      "$description": "C++11/14/17 std::expected implementation with functional-style extensions",
-      "$license": "Unlicense",
-      "$homepage": "https://github.com/TartanLlama/expected"
-    },
-    {
       "name": "uchardet",
       "version>=": "0.0.8",
       "default-features": false,
@@ -266,6 +253,14 @@
       "$description": "A compile-time, header-only, dimensional analysis and unit conversion library built on c++14 with no dependencies.",
       "$license": "MIT",
       "$homepage": "https://github.com/nholthaus/units"
+    },
+    {
+      "name": "utfcpp",
+      "version>=": "4.0.6",
+      "default-features": false,
+      "$description": "UTF-8 with C++ in a Portable Way",
+      "$license": "BSL-1.0",
+      "$homepage": "https://github.com/nemtrif/utfcpp"
     },
     {
       "name": "xxhash",
