@@ -1,7 +1,7 @@
 YunchengLiu/my-vcpkg-binarycaches@main:
-  - source: hxtplib/vcpkg.json
+  - source: fika/vcpkg.json
     dest: vcpkg.json
-  - source: hxtplib/vcpkg-configuration.json
+  - source: fika/vcpkg-configuration.json
     dest: vcpkg-configuration.json
-  - source: hxtplib/config/overlay-vcpkg-triplets/hxtp-x64-win.cmake
-    dest: config/overlay-vcpkg-triplets/hxtp-x64-win.cmake
+  - source: fika/config/overlay-vcpkg-triplets/fika-x64-win.cmake
+    dest: config/overlay-vcpkg-triplets/fika-x64-win.cmake
