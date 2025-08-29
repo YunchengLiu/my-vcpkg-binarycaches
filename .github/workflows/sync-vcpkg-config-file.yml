@@ -20,7 +20,7 @@ jobs:
       - name: Checkout private repo
         uses: actions/checkout@v4
         with:
-          repository: YunchengLiu/hxtplib
+          repository: YunchengLiu/fika
           token: ${{ secrets.SYNC_FROM_HXTP_TOKEN }}
           path: hxtplib
           fetch-depth: 0
